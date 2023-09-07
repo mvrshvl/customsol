@@ -4,7 +4,7 @@ pragma experimental ABIEncoderV2;
 import "./TradingPriceAbstract.sol";
 
 contract HighOrderContract is TradingPriceAbstract {
-    function Main(Token[] memory _tokens, address _to, SubscribeParams[] memory _params, uint _finalizedBlock) public returns (Action[] memory actions) {
+    function Main(Token[] memory _tokens, address _to, SubscribeParams[] memory _params, uint _finalizedBlock) public virtual override returns (Action[] memory actions) {
         return actions;
     }
 
@@ -13,7 +13,7 @@ contract HighOrderContract is TradingPriceAbstract {
         uint reserve1;
     }
 
-    function CustomMain(bytes calldata _event, address _eventEmitter, string calldata _eventName, uint _finalizedBlock) public returns (CustomAction[] memory actions) {
+    function CustomMain(bytes calldata _event, address _eventEmitter, string calldata _eventName, uint _finalizedBlock) public virtual override returns (CustomAction[] memory actions) {
         if (keccak256(abi.encodePacked(_eventName)) == keccak256(abi.encodePacked("sync"))) {
             Sync memory syncEvent = abi.decode(_event, (Sync));
 
