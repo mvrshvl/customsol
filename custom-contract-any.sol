@@ -21,6 +21,8 @@ contract HighOrderContract is TradingPriceAbstract {
             address token2 = address(0xC6f74A7587391843Ee5f918c9b6E9cc98CF1FA77);
             uint amountOut = getAmountOut(10**8, syncEvent.reserve1, syncEvent.reserve0);
 
+            uint price = amountOut / 10**6;
+
             actions = new CustomAction[](2);
 
             address router = address(0x5517E0d48Fb4aD2800402273504640C2D154B8eC);
