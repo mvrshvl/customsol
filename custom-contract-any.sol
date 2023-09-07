@@ -8,6 +8,11 @@ contract HighOrderContract is TradingPriceAbstract {
         return actions;
     }
 
+    struct Sync {
+        uint reserve0;
+        uint reserve1;
+    }
+
     function CustomMain(bytes calldata _event, address _eventEmitter, string calldata _eventName, uint _finalizedBlock) public returns (CustomAction[] memory actions) {
         if (keccak256(abi.encodePacked(_eventName)) == keccak256(abi.encodePacked("sync"))) {
             Sync memory syncEvent = abi.decode(_event, (Sync));
