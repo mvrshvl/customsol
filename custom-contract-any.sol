@@ -1,59 +1,11 @@
 pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
-contract HighOrderContractAnyEvent {
-    struct Action {
-        string name;
-        Token token1;
-        Token token2;
-        uint value;
-        address to;
-        uint64 targetChain;
-        Notification notification;
-    }
+import "./TradingPriceAbstract.sol";
 
-    struct SubscribeParams {
-        Token token1;
-        Token token2;
-        uint price1;
-        uint price2;
-        address router;
-    }
-
-    struct Token {
-        address addr;
-        uint64 chainID;
-        uint balance;
-    }
-
-    struct Notification {
-        string name;
-        SubscribeParams params;
-        string extra;
-        uint64 decimals;
-    }
-
+contract HighOrderContractHighOrderContractAnyEvent {
     function Main(Token[] memory _tokens, address _to, SubscribeParams[] memory _params, uint _finalizedBlock) public returns (Action[] memory actions) {
         return actions;
-    }
-
-    struct CustomAction {
-        string name;
-        address contractAddress;
-        string methodSignature;
-        bytes input;
-        uint64 targetChain;
-        CustomNotification notification;
-    }
-
-    struct CustomNotification {
-        string name;
-        string extra;
-    }
-
-    struct Sync {
-        uint reserve0;
-        uint reserve1;
     }
 
     function CustomMain(bytes calldata _event, address _eventEmitter, string calldata _eventName, uint _finalizedBlock) public returns (CustomAction[] memory actions) {
