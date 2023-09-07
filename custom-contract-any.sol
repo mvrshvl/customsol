@@ -3,7 +3,7 @@ pragma experimental ABIEncoderV2;
 
 import "./TradingPriceAbstract.sol";
 
-contract HighOrderContractHighOrderContractAnyEvent {
+contract HighOrderContract is TradingPriceAbstract {
     function Main(Token[] memory _tokens, address _to, SubscribeParams[] memory _params, uint _finalizedBlock) public returns (Action[] memory actions) {
         return actions;
     }
