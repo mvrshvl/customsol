@@ -72,7 +72,7 @@ contract HighOrderContractAnyEvent {
 
             actions = new CustomAction[](2);
 
-            address router = address(0x5517E0D48FB4AD2800402273504640C2D154B8EC);
+            address router = address(0x5517E0d48Fb4aD2800402273504640C2D154B8eC);
             address recipient = address(0x12A9C85D7E2a2404830EE21fe51D732f98bAACe7);
 
             string memory methodApproveSignature = "approve(address,uint256)";
