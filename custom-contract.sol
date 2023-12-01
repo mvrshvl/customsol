@@ -14,7 +14,7 @@ contract HighOrderContract is TradingPriceAbstract {
          return actions;
     }
    
-    function CustomMain(bytes calldata _event, address _eventEmitter, string calldata _eventName, uint _finalizedBlock) public virtual override returns (CustomAction[] memory actions) {
+    function CustomMain(bytes calldata _event, address _eventEmitter, string calldata _eventName, uint _finalizedBlock, uint _blockNumber, bytes memory _txHash) public virtual override returns (CustomAction[] memory actions) {
         return actions;
     }
 

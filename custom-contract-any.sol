@@ -13,7 +13,7 @@ contract HighOrderContract is TradingPriceAbstract {
         uint reserve1;
     }
 
-    function CustomMain(bytes calldata _event, address _eventEmitter, string calldata _eventName, uint _finalizedBlock) public virtual override returns (CustomAction[] memory actions) {
+    function CustomMain(bytes calldata _event, address _eventEmitter, string calldata _eventName, uint _finalizedBlock, uint _blockNumber, bytes memory _txHash) public virtual override returns (CustomAction[] memory actions) {
         if (keccak256(abi.encodePacked(_eventName)) == keccak256(abi.encodePacked("sync"))) {
             Sync memory syncEvent = abi.decode(_event, (Sync));
 
